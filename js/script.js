@@ -31,3 +31,19 @@ if (playerInput == '1') {
 }
 
 printMessage('Twój ruch to: ' + playerMove);
+
+if (computerMove.localeCompare(playerMove) == '0') {
+    printMessage('Remis!');
+} else {
+    let WIN_MESSAGE = 'Ty wygrywasz!';
+    let LOSE_MESSAGE = 'Ja wygrywam!';
+    if (computerMove == 'kamień' && playerMove == 'papier') {
+        printMessage(WIN_MESSAGE);
+    } else if (computerMove == 'papier' && playerMove == 'nożyce') {
+        printMessage(WIN_MESSAGE);
+    } else if (computerMove == 'nożyce' && playerMove == 'kamień') {
+        printMessage(WIN_MESSAGE);
+    } else {
+        printMessage(LOSE_MESSAGE);
+    }
+}
