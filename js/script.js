@@ -17,7 +17,7 @@ function playGame(playerInput) {
     function displayResult(argComputerMove, argPlayerMove) {
         printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 
-        if (argComputerMove.localeCompare(argPlayerMove) == '0') {
+        if (argComputerMove.localeCompare(argPlayerMove) == 0) {
             printMessage('Remis!');
         } else {
             let WIN_MESSAGE = 'Ty wygrywasz!';
