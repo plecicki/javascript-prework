@@ -51,10 +51,14 @@ function playGame(playerInput) {
     displayResult(computerMove, playerMove);
 }
 
-let rockButton = document.getElementById('play-rock');
-let paperButton = document.getElementById('play-paper');
-let scissorsButton = document.getElementById('play-scissors');
+function addEventsForButtons() {
+    let rockButton = document.getElementById('play-rock');
+    let paperButton = document.getElementById('play-paper');
+    let scissorsButton = document.getElementById('play-scissors');
 
-rockButton.addEventListener('click', function(){playGame('1')});
-paperButton.addEventListener('click', function(){playGame('2')});
-scissorsButton.addEventListener('click', function(){playGame('3')});
+    rockButton.addEventListener('click', function(){playGame('1')});
+    paperButton.addEventListener('click', function(){playGame('2')});
+    scissorsButton.addEventListener('click', function(){playGame('3')});
+}
+
+addEventsForButtons();
