@@ -1,16 +1,18 @@
 function playGame(playerInput) {
     clearMessages()
 
+    const ROCK = 'kamień', PAPER = 'papier', SCISSORS = "nożyce", UKNOWN_MOVE = "nieznany ruch";
+
     function getMoveName(argMoveId) {
         if (argMoveId == 1) {
-            return 'kamień';
+            return ROCK;
         } else if (argMoveId == 2) {
-            return 'papier';
+            return PAPER;
         } else if (argMoveId == 3) {
-            return 'nożyce';
+            return SCISSORS;
         } else {
             printMessage('Nie znam ruchu o id ' + argMoveId + '.');
-            return 'nieznany ruch';
+            return UKNOWN_MOVE;
         }
     }
 
@@ -20,13 +22,13 @@ function playGame(playerInput) {
         if (argComputerMove.localeCompare(argPlayerMove) == 0) {
             printMessage('Remis!');
         } else {
-            let WIN_MESSAGE = 'Ty wygrywasz!';
-            let LOSE_MESSAGE = 'Ja wygrywam!';
-            if (argComputerMove == 'kamień' && argPlayerMove == 'papier') {
+            const WIN_MESSAGE = 'Ty wygrywasz!';
+            const LOSE_MESSAGE = 'Ja wygrywam!';
+            if (argComputerMove == ROCK && argPlayerMove == PAPER) {
                 printMessage(WIN_MESSAGE);
-            } else if (argComputerMove == 'papier' && argPlayerMove == 'nożyce') {
+            } else if (argComputerMove == PAPER && argPlayerMove == SCISSORS) {
                 printMessage(WIN_MESSAGE);
-            } else if (argComputerMove == 'nożyce' && argPlayerMove == 'kamień') {
+            } else if (argComputerMove == SCISSORS && argPlayerMove == ROCK) {
                 printMessage(WIN_MESSAGE);
             } else {
                 printMessage(LOSE_MESSAGE);
@@ -34,17 +36,17 @@ function playGame(playerInput) {
         }
     }
 
-    let randomNumber = Math.floor(Math.random() * 3 + 1);
+    const randomNumber = Math.floor(Math.random() * 3 + 1);
 
     console.log('Wylosowana liczba to: ' + randomNumber);
 
-    let computerMove = getMoveName(randomNumber);
+    const computerMove = getMoveName(randomNumber);
 
     printMessage('Mój ruch to: ' + computerMove);
 
     console.log('Gracz wpisał: ' + playerInput);
 
-    let playerMove = getMoveName(playerInput);
+    const playerMove = getMoveName(playerInput);
 
     printMessage('Twój ruch to: ' + playerMove);
 
@@ -52,9 +54,9 @@ function playGame(playerInput) {
 }
 
 function addEventsForButtons() {
-    let rockButton = document.getElementById('play-rock');
-    let paperButton = document.getElementById('play-paper');
-    let scissorsButton = document.getElementById('play-scissors');
+    const rockButton = document.getElementById('play-rock');
+    const paperButton = document.getElementById('play-paper');
+    const scissorsButton = document.getElementById('play-scissors');
 
     rockButton.addEventListener('click', function(){playGame('1')});
     paperButton.addEventListener('click', function(){playGame('2')});
