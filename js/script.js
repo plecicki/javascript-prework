@@ -1,9 +1,9 @@
-function playGame(playerInput) {
+const playGame = function(playerInput) {
     clearMessages()
 
     const ROCK = 'kamień', PAPER = 'papier', SCISSORS = "nożyce", UKNOWN_MOVE = "nieznany ruch";
 
-    function getMoveName(argMoveId) {
+    const getMoveName = function(argMoveId) {
         if (argMoveId == 1) {
             return ROCK;
         } else if (argMoveId == 2) {
@@ -16,7 +16,7 @@ function playGame(playerInput) {
         }
     }
 
-    function displayResult(argComputerMove, argPlayerMove) {
+    const displayResult = function(argComputerMove, argPlayerMove) {
         printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 
         if (argComputerMove.localeCompare(argPlayerMove) == 0) {
@@ -53,7 +53,7 @@ function playGame(playerInput) {
     displayResult(computerMove, playerMove);
 }
 
-function addEventsForButtons() {
+const addEventsForButtons = function() {
     const rockButton = document.getElementById('play-rock');
     const paperButton = document.getElementById('play-paper');
     const scissorsButton = document.getElementById('play-scissors');
